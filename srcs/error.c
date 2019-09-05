@@ -6,7 +6,7 @@
 /*   By: abarnett <alanbarnett328@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 02:07:42 by abarnett          #+#    #+#             */
-/*   Updated: 2019/09/05 15:35:52 by abarnett         ###   ########.fr       */
+/*   Updated: 2019/09/05 16:14:44 by rreedy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ const char	*get_error_string(enum e_err_code error_code)
 		"Could not restore previous terminal state",
 	};
 
-	return ((error_code > 0 && error_code < ERROR_MESSAGE_COUNT)
-			? (error_strings[error_code]) : 0);
+	if (0 < error_code && error_code < ERROR_MESSAGE_COUNT)
+		return (error_strings[error_code]);
+	return (0);
 }
 
 /*
