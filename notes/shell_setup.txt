@@ -1,0 +1,6 @@
+shell_setup
+	- set up terminal
+		- noncanonical mode
+	- dup environ
+	- increase shell lvl
+	- name of shell = binary name
